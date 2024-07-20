@@ -37,9 +37,22 @@ import MapChart from './components/MapChart.vue'
 import VerticalBar from './components/VerticalBar.vue'
 import RingBar from './components/RingBar.vue'
 import WordCloud from './components/WordCloud.vue'
+
+import {ref, reactive} from 'vue'
+// import { getVisualization } from './api/visualization' 
+import mockData from './utils/mockData'
+
+const data = ref();
+const _mockData = reactive(mockData)
+
+const loadData = async () => {
+  // data.value = await getVisualization()
+  data.value = _mockData
+  console.log(data.value)
+}
+loadData()
 </script>
 
 <style lang=" stylus" rel="stylesheet/stylus">
 
-
-        </style>
+ </style>
